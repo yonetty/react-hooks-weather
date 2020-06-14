@@ -1,5 +1,6 @@
 import React from 'react';
 import { Forcast } from './components/Forcast';
+import { CitySelector } from './components/CitySelector';
 
 function App() {
   const forcasts = [
@@ -21,6 +22,7 @@ function App() {
   ]
   return (
     <div>
+      <CitySelector />
       {forcasts.map((f) => {
         return <Forcast key={f.date} {...f} />
       })}

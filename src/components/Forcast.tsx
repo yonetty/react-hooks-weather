@@ -79,5 +79,5 @@ export const Forcast: FunctionComponent<ForcastProps> = (props) => {
         <Max>{props.maxTemperature}</Max>
       </Temperature>
     </Wrapper>
-  )
+  );
 }
