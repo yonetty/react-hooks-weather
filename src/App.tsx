@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CitySelector } from './components/CitySelector';
-import { Forcasts } from './components/Forcasts';
+import { Forecasts } from './components/Forecasts';
 
 function App() {
   const [cityCode, setCityCode] = useState("");
@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <CitySelector onCityChange={handleCityChange} />
-      <Forcasts cityCode={cityCode} />
+      <Forecasts cityCode={cityCode} />
     </div>
   );
 }
