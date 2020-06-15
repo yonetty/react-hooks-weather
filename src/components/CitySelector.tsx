@@ -48,7 +48,11 @@ const Link = styled.a`
   }
 `
 
-export const CitySelector: FunctionComponent<{}> = () => {
+type CitySelectorProps = {
+  onCityChange: (cityCode: string) => void;
+}
+
+export const CitySelector: FunctionComponent<CitySelectorProps> = (props) => {
   const [selectedAreaName, setSelectedAreaName] = useState("");
   const [selectedPrefectureName, setSelectedPrefectureName] = useState("");
   const selectedArea = areas.find((area) => area.name === selectedAreaName);
@@ -61,10 +65,6 @@ export const CitySelector: FunctionComponent<{}> = () => {
   }
   const handlePrefectureChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedPrefectureName(e.target.value);
-  }
-  const handleCityLinkClick = (code: string) => {
-    //notify parent
-    console.log("City selected: " + code);
   }
 
   return (
@@ -83,7 +83,7 @@ export const CitySelector: FunctionComponent<{}> = () => {
       </PrefectureSelect>
       <CityList>
         {cities.map((city) => {
-          return <CityItem key={city.code}><Link href="#" onClick={() => handleCityLinkClick(city.code)}>{city.name}</Link></CityItem>
+          return <CityItem key={city.code}><Link href="#" onClick={() => props.onCityChange(city.code)}>{city.name}</Link></CityItem>
         })}
       </CityList>
     </Wrapepr>
