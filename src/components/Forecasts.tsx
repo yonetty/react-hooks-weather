@@ -50,13 +50,24 @@ const extractDescription = (json: any) => {
   };
 }
 
+const getFetchUrl = (cityCode: string) => {
+  let baseUrl: string;
+  if (process.env.NODE_ENV === 'production') {
+    baseUrl = "http://weather.livedoor.com";
+  } else {
+    baseUrl = "/api";
+  }
+  const url = `${baseUrl}/forecast/webservice/json/v1?city=${cityCode}`;
+  return url;
+}
+
 export const Forecasts: FunctionComponent<ForecastsProps> = (props) => {
   const [forcasts, setForcasts] = useState<ForecastProps[]>([]);
   const [description, setDescription] = useState<DescriptionProps>();
 
   useEffect(() => {
     if (props.cityCode) {
-      const url = `/api/forecast/webservice/json/v1?city=${props.cityCode}`;
+      const url = getFetchUrl(props.cityCode);
       fetch(url)
         .then((res) => {
           return res.json();
