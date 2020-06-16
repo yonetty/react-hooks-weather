@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 
-type ForcastProps = {
+export type ForecastProps = {
   dateLabel: string;
   telop: string;
   date: string;
   minTemperature?: string;
-  maxTemperature: string;
+  maxTemperature?: string;
   imageUrl: string;
   imageAlt?: string;
 }
@@ -66,7 +66,7 @@ const Max = styled.span`
   color: red;
 `
 
-export const Forcast: FunctionComponent<ForcastProps> = (props) => {
+export const Forcast: FunctionComponent<ForecastProps> = (props) => {
   return (
     <Wrapper>
       <DateLabel>{props.dateLabel}</DateLabel>
@@ -76,7 +76,7 @@ export const Forcast: FunctionComponent<ForcastProps> = (props) => {
       <Temperature>
         <Min>{props.minTemperature || "-"}</Min>
         <Infix>{"/"}</Infix>
-        <Max>{props.maxTemperature}</Max>
+        <Max>{props.maxTemperature || "-"}</Max>
       </Temperature>
     </Wrapper>
   );
