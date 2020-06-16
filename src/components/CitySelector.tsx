@@ -66,6 +66,10 @@ export const CitySelector: FunctionComponent<CitySelectorProps> = (props) => {
   const handlePrefectureChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedPrefectureName(e.target.value);
   }
+  const handleCityLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, cityCode: string) => {
+    e.preventDefault();
+    props.onCityChange(cityCode);
+  }
 
   return (
     <Wrapepr>
@@ -83,7 +87,13 @@ export const CitySelector: FunctionComponent<CitySelectorProps> = (props) => {
       </PrefectureSelect>
       <CityList>
         {cities.map((city) => {
-          return <CityItem key={city.code}><Link href="#" onClick={() => props.onCityChange(city.code)}>{city.name}</Link></CityItem>
+          return (
+            <CityItem key={city.code}>
+              <Link href="#" onClick={(e) => handleCityLinkClick(e, city.code)}>
+                {city.name}
+              </Link>
+            </CityItem>
+          );
         })}
       </CityList>
     </Wrapepr>
