@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/react-hooks-weather/static/js/main.4681bdd8.chunk.js",
+    "main.js.map": "/react-hooks-weather/static/js/main.4681bdd8.chunk.js.map",
+    "runtime-main.js": "/react-hooks-weather/static/js/runtime-main.e0c7448c.js",
+    "runtime-main.js.map": "/react-hooks-weather/static/js/runtime-main.e0c7448c.js.map",
+    "static/js/2.8c767216.chunk.js": "/react-hooks-weather/static/js/2.8c767216.chunk.js",
+    "static/js/2.8c767216.chunk.js.map": "/react-hooks-weather/static/js/2.8c767216.chunk.js.map",
+    "index.html": "/react-hooks-weather/index.html",
+    "precache-manifest.49f6a5e523a5cc168138f8d3a8651648.js": "/react-hooks-weather/precache-manifest.49f6a5e523a5cc168138f8d3a8651648.js",
+    "service-worker.js": "/react-hooks-weather/service-worker.js",
+    "static/js/2.8c767216.chunk.js.LICENSE.txt": "/react-hooks-weather/static/js/2.8c767216.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e0c7448c.js",
+    "static/js/2.8c767216.chunk.js",
+    "static/js/main.4681bdd8.chunk.js"
+  ]
+}
